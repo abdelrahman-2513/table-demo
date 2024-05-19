@@ -19,3 +19,13 @@ export const fetchData = async ({ page, sortBy, sortOrder }) => {
         console.log(err)
     }
 }
+
+export const addPost = async (postData) => {
+    try {
+        const response = await axiosInstance.post('', postData);
+        console.log(response.data);
+        return postData
+    } catch (err) {
+        console.log(err)
+    }
+}
