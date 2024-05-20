@@ -1,4 +1,5 @@
 import axiosInstance from "./axiosInstance"
+import ProductAxiosInstance from "./products/axiosInstanceProducts"
 
 export const fetchData = async ({ page, sortBy, sortOrder }) => {
     try {
@@ -25,6 +26,34 @@ export const addPost = async (postData) => {
         const response = await axiosInstance.post('', postData);
         console.log(response.data);
         return postData
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+export const fetchProducts = async ({ pageParam }) => {
+    try {
+        const response = await ProductAxiosInstance.get('', {
+            params: {
+                limit: 10,
+                offset: pageParam ? pageParam * 10 : 0,
+
+            }
+        })
+        return response.data
+    } catch (err) {
+        console.log(err)
+    }
+}
+export const fetchProductsByTitle = async (title) => {
+    try {
+        const response = await ProductAxiosInstance.get('', {
+            params: {
+                title: title
+
+            }
+        })
+        return response.data
     } catch (err) {
         console.log(err)
     }

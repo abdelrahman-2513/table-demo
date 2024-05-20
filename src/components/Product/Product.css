@@ -1,0 +1,17 @@
+.ant-card-meta-description {
+  max-height: 65px;
+  overflow: scroll;
+}
+.ant-card-meta-description::-webkit-scrollbar {
+  display: none;
+}
+.btns {
+  display: flex;
+  width: 90%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.loading {
+  min-height: 90%;
+  opacity: 0.5;
+}
