@@ -11,3 +11,6 @@
   gap: 10px;
   overflow: initial;
 }
+.ant-dropdown-menu-item {
+  padding: 10px !important;
+}
